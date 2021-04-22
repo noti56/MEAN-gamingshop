@@ -1,0 +1,50 @@
+
+
+.shop{
+    height: 100%;
+    background-color:rgba(66, 65, 65, 0.5);
+
+}
+
+
+.categories{
+    /* color: rgb(234, 39, 105); */
+}
+.nav-tabs{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+.cards_container{
+    /* margin-top:10px ; */
+    height: 84.5vh;
+    
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr  ;                    
+}
+.single_card_container{
+    height: 84.5vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+form{
+    position: absolute;
+    right: 0px;
+    top: 33px;
+    
+}
+mat-tab{
+
+    /* overflow-y: auto; */
+
+    
+}

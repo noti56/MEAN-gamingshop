@@ -1,0 +1,29 @@
+<mat-card class="card" [ngClass]="{'smaller_card':!shop_service.manyCards}">
+
+    <mat-icon class="x_btn" (click)="closeModal()" *ngIf="!shop_service.manyCards">close</mat-icon>
+    <img mat-card-image [src]="img_url" [alt]="name">
+    <mat-card-title>{{name}}</mat-card-title>
+    <mat-card-subtitle>{{price}} ₪ </mat-card-subtitle>
+    <button *ngIf="shop_service.manyCards && !auth_service.user.isAdmin" mat-button color="primary">
+
+        <mat-icon (click)="openModal(product)">add_circle_outline</mat-icon>
+
+    </button>
+    <button *ngIf="shop_service.manyCards && auth_service.user.isAdmin" mat-button color="primary">
+
+        <mat-icon (click)="setSelectedProductAdmin(product)">edit</mat-icon>
+
+    </button>
+
+
+    <form class="example-form" *ngIf="!shop_service.manyCards" [formGroup]="myForm" (ngSubmit)="cartAdding(product)">
+        <mat-form-field class="example-full-width">
+            <mat-label>quantity</mat-label>
+            <input matInput type="number" placeholder="numbers only" value=1 formControlName="quantity">
+        </mat-form-field>
+        <button style="display: block; margin: auto;" mat-button color="primary"> Add to Cart</button>
+        <!-- <input type="submit" value="submit"> -->
+
+    </form>
+
+</mat-card>

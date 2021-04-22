@@ -1,0 +1,49 @@
+<div class="openCart" *ngIf="!cart_service.displayCart">
+
+    <mat-icon class="closeBtn" (click)="cart_service.displayCart = true">shopping_cart</mat-icon>
+</div>
+<div class="openCart" *ngIf="!cart_service.displayCart">
+
+    <a mat-raised-button style="font-size: large;color: cadetblue;" routerLink='order'>Order</a>
+</div>
+<!-- {{cart_service.ca |json}} -->
+<div class="cart" *ngIf="cart_service.displayCart">
+    <div class="upper_btns" *ngIf="r.url != '/order'">
+        <mat-icon class="closeBtn" (click)="cart_service.displayCart = false">close</mat-icon>
+        <mat-icon class="closeBtn" (click)="deleteAllProds()">delete</mat-icon>
+    </div>
+
+
+    <div class="cart_container">
+
+        <div class="cart_products" *ngFor="let p of cart_service.cart_products">
+
+            <ng-template class="popContent" #popContent><img [src]="p.prod_id.img_url" [alt]="p.prod_id.name +' photo'"
+                    width="200"></ng-template>
+            <button type="button" class="btn btn-outline-secondary" [ngbPopover]="popContent" placement="right">
+
+                <mat-list role="list">
+                    <mat-icon *ngIf="r.url!='/order'" (click)="deleteProd(p.prod_id._id)">delete</mat-icon>
+                    <mat-list-item role="listitem" [ngClass]="{'toMark':ifMarks(p.prod_id.name) }">{{p.prod_id.name}}
+                    </mat-list-item>
+
+                    <mat-list-item role="listitem"> price:{{p.prod_id.price}}</mat-list-item>
+                    <mat-list-item role="listitem"> quantity:{{p.quantity}}</mat-list-item>
+                </mat-list>
+
+
+            </button>
+            <!--  -->
+
+        </div>
+
+
+    </div>
+
+    <footer>
+        <div class="order-link">
+            <p *ngIf="displayFinalPrice"> final price : {{cart_service.finalPrice}} </p>
+            <a mat-raised-button [routerLink]="link">{{a}}</a>
+        </div>
+    </footer>
+</div>

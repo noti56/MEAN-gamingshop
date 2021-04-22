@@ -1,0 +1,42 @@
+
+.main{
+    display: flex;
+    justify-content: space-between;
+    height: 93%;
+    /* overflow: hidden; */
+}
+
+.left{
+    height: 93vh;
+    background-color: rgb(48, 48, 48);
+    width: 30%;
+    border-right: 2px solid black;
+}
+.leftSmall{
+    height: 93vh;
+    /* height: min-content; */
+    background-color:rgba(66, 65, 65, 0.5);
+    
+    /* background-color: rgb(48, 48, 48); */
+    /* width: 10%; */
+  
+}
+
+.right{
+    height: 93vh;
+    
+    width: 100%;
+    
+    /* background-color:rgba(66, 65, 65, 0.5); */
+    
+    
+    overflow: auto;
+}
+.rightSmall{
+    height: 93vh;
+    width: 70%;
+    overflow: auto;
+    background-color:rgba(66, 65, 65, 0.5);
+    
+    
+}

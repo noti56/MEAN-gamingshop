@@ -1,0 +1,13 @@
+.login{
+    height: 100%;
+    width: 100%;
+}
+mat-form-field{
+    background-color: rgba(66, 66, 66, 0.514);
+    display: block;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

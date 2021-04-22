@@ -1,0 +1,30 @@
+<div class="comp">
+    <div class="welcome">
+        <img src="https://images.pexels.com/photos/3945673/pexels-photo-3945673.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+            alt="gaming accessories ">
+
+        <h2>Why you should buy in our store ? </h2>
+        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe sed veritatis sapiente numquam quod, maiores
+            minima eaque nisi consequatur impedit accusantium unde quidem quis nemo earum enim veniam, tempore quia?
+            yani tavo tikne tehena tavie li 100 baproject eskati full
+        </p>
+    </div>
+
+    <div class="stats">
+        <div>
+            <img src='https://images.pexels.com/photos/1038916/pexels-photo-1038916.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+                alt="product image">
+
+            <p>Available products in hour store: {{stats.numberOfProducts}} </p>
+            <p>Numbers of orders shipped from our store: {{stats.numberOfOrders}} </p>
+        </div>
+        <div *ngIf="auth_service.user" class="notifi">
+            <p>Notifilication:</p>
+            <p *ngIf="dateOpened_cart">you have an open cart from : <span>{{dateOpened_cart |date}} | price:
+                    {{cart_service.finalPrice}} </span></p>
+            <p> your latest purchase were in : <span>{{dateOrdering_order |date}} </span></p>
+
+
+        </div>
+    </div>
+</div>

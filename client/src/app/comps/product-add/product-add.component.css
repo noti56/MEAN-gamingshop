@@ -1,0 +1,54 @@
+.comp{
+    height: 100%;
+    width: 100%;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+
+}
+.upper_btnCover{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.display_form_button{
+    background-color:rgba(255, 255, 255,0.7);
+    height: min-content;
+    width: min-content;
+    justify-self: flex-start;
+    
+}
+form{
+    
+    height: 80%;
+    width: 100%; 
+       display: flex;
+    flex-direction: column;
+justify-content: center;
+text-align: center;
+}
+
+
+
+.form-field{
+    width: 100%;
+    
+    margin: auto;
+}
+.number{
+    margin: auto;
+    width: 80%;
+}
+
+.lower_btn_add{
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.msg{
+    /* color: wheat; */
+    background-color: wheat;
+}
+
+
+

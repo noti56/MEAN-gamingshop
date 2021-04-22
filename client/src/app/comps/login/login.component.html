@@ -1,0 +1,41 @@
+<div class="login">
+
+    <div class="shooping_link" *ngIf="this.cart_service.hasACart && this.auth_service.user">
+        <button (click)="routeToShop()" mat-raised-button color="primary" variant="contained">
+            Resume shooping</button>
+    </div>
+    <div class="shooping_link" *ngIf="!this.cart_service.hasACart || !this.auth_service.user">
+        <button (click)="routeToShop()" mat-raised-button color="primary" variant="contained">
+            Start shooping</button>
+    </div>
+
+    <mat-card *ngIf="errBtn_click">
+
+        You have to be logged in first
+    </mat-card>
+    <p>{{errorDisplay}}</p>
+    <mat-card *ngIf="!auth_service.user">
+        <form [formGroup]="myForm" (ngSubmit)="loginSubmit()">
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="blah@blah.com" value="" formControlName="email">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="Password" value="" formControlName="password">
+            </mat-form-field>
+            <button mat-raised-button color="primary">Login</button>
+        </form>
+
+        <a mat-raised-button style="font-size: large;color: cadetblue;" routerLink="/register">Don't have a user? Come
+            and join us </a>
+    </mat-card>
+
+    <div *ngIf="this.auth_service.user && loggedNow">
+        <mat-card color="primary">
+            You logged in sucssesfully!
+        </mat-card>
+    </div>
+
+
+</div>

@@ -1,0 +1,43 @@
+app-navbar{
+    height: 20%;
+}
+/* mat-card{    
+    height: 80%;
+} */
+
+/* mat-grid-tile{
+    background-color: aliceblue;
+    height: 80%; 
+     width: 100%;
+} */
+
+.app{
+    height: 100vh;
+    /* width: 100vw; */
+}
+
+.notLogged{
+    display: flex;
+    height: 93%;
+
+}
+section{
+    width: 60%;
+    height: 100%;
+    
+}
+.left{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: blue; */
+
+}
+.right{
+    /* background-color:rgba(66, 65, 65, 0.5); */
+
+}
+.logged{
+    /* height: ; */
+}

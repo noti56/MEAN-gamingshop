@@ -1,0 +1,49 @@
+<!-- <p>
+    <mat-toolbar color="primary">
+
+        <mat-icon>games</mat-icon>
+
+
+        <span class="example-spacer"></span>
+
+
+    </mat-toolbar>
+</p> -->
+<div class="nav-bar">
+    <!-- user -->
+    <div *ngIf=" !auth_service.user">
+        <button mat-button class="icon">🎮</button>
+        <button mat-button id="not">Gaming Shop</button>
+
+        <button mat-button>Contact Us at <span>blah@isAdmin.com</span></button>
+    </div>
+
+
+    <div *ngIf=" auth_service.user && !auth_service.user.isAdmin">
+        <button mat-button class="icon" (click)="handleBackHome()">🏠</button>
+        <button mat-button id="not">Gaming Shop</button>
+
+        <button mat-button>Contact Us at <span>blah@isAdmin.com</span></button>
+        <button mat-button id="logout" *ngIf="auth_service.user" (click)="logout()">Logout</button>
+    </div>
+    <!-- admin -->
+    <div *ngIf=" auth_service.user && auth_service.user.isAdmin">
+        <button mat-button class="icon">👑👑👑</button>
+        <!-- <button mat-button id="not">Welcome Admin </button> -->
+
+        <!-- <button mat-button id="logout" *ngIf="auth_service.user" (click)="logout()">Logout</button> -->
+        <button mat-button id="logout" (click)="logout()">Logout</button>
+    </div>
+
+
+
+
+    <!-- <button *ngIf="auth_service.user.isAdmin" (click)="route()" class="add_prod" mat-button>Add product</button> -->
+    <app-search *ngIf="r.url == '/' || r.url == '/order' "></app-search>
+
+
+
+
+
+
+</div>

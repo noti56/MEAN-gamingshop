@@ -1,0 +1,32 @@
+.nav-bar{
+    height:7% ;
+    width: 100%;
+    /* background-color: rgb(69, 103, 167); */
+    background-color: rgba(202, 153, 111, 0.794);
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+span{
+    color: burlywood;
+}
+#logout{
+    background-color: #fff;
+}
+.add_prod{
+    /* color: white; */
+    border: 1px solid black;
+    background-color:rgba(229, 39, 105,0.5);
+    width: 30%;
+    color: white;
+    /* height: 85%; */
+    font-size: large;
+    margin: auto;
+}
+.add_prod:hover{
+    color: black;
+    background-color:rgb(229, 39, 105);
+}
+

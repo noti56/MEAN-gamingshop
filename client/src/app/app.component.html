@@ -1,0 +1,27 @@
+<div class="app">
+
+  <app-navbar></app-navbar>
+
+
+
+  <!-- <div class="notLogged" *ngIf="!auth_service.user && auth_service.hasClickedOnStart"> -->
+  <div class="notLogged" *ngIf=" !auth_service.hasClickedOnStart">
+
+
+    <section class="left">
+      <router-outlet></router-outlet>
+    </section>
+    <section class="right">
+      <app-welcome></app-welcome>
+    </section>
+
+  </div>
+
+  <div class="logged" *ngIf="auth_service.user && auth_service.hasClickedOnStart">
+    <router-outlet></router-outlet>
+
+
+  </div>
+
+
+</div>

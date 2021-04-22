@@ -1,0 +1,64 @@
+<div class="login" *ngIf="formPaginator">
+    <mat-card *ngIf="displayTheError">{{errorDisplay}}</mat-card>
+    <mat-card color=" primary">
+
+        <form [formGroup]="firstForm" (ngSubmit)="formValidation()">
+
+            <mat-form-field class="example-full-width">
+                <mat-label>id</mat-label>
+                <input matInput placeholder="id" value="" formControlName="idUser">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>email</mat-label>
+                <input matInput placeholder="email" value="" formControlName="email">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" type="password" value="" formControlName="password">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>confirm Password</mat-label>
+                <input matInput placeholder="confirm Password" type="password" value=""
+                    formControlName="confirmedPassword">
+            </mat-form-field>
+            <button mat-stroked-button>➡</button>
+        </form>
+        <a mat-raised-button style="font-size: large;color: cadetblue;" routerLink="/login">Already have a user? Login
+        </a>
+    </mat-card>
+</div>
+
+<!-- secondary form ! -->
+
+<div class="login" *ngIf="!formPaginator">
+    <mat-card *ngIf="displayTheError">{{errorDisplay}}</mat-card>
+
+    <mat-card color=" primary">
+        <form [formGroup]="secondForm" (ngSubmit)="handleSubmit()">
+            <mat-form-field class="example-full-width">
+                <mat-label>name</mat-label>
+                <input matInput placeholder="name" value="" formControlName="name">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>last name</mat-label>
+                <input matInput placeholder="last name" value="" formControlName="lastName">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>City</mat-label>
+                <mat-select formControlName="city">
+                    <mat-option *ngFor="let city of cities" [value]="city">{{city}}</mat-option>
+
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>street</mat-label>
+                <input matInput placeholder="street" value="" formControlName="street">
+            </mat-form-field>
+            <button mat-raised-button color="primary"> Submit </button>
+        </form>
+        <a mat-raised-button style="font-size: large;color: cadetblue;" routerLink="/login">Already have a user? Login
+        </a>
+    </mat-card>
+</div>

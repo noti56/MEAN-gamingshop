@@ -1,0 +1,44 @@
+<div class="comp">
+    <div class="upper_btnCover">
+        <button class="display_form_button"
+            *ngIf="!admin_service.selectedProduct && !admin_service.displayForm  ||admin_service.selectedProduct && admin_service.displayForm"
+            (click)="newProductFormDisplayer()" mat-button>New
+            Product
+        </button>
+    </div>
+    <form *ngIf="admin_service.displayForm" [formGroup]="admin_service.productManageForm" (ngSubmit)="handleSubmit()">
+
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>name</mat-label>
+            <input matInput placeholder="ex. steelseries HeadPhones" formControlName="name">
+        </mat-form-field>
+
+        <!--  -->
+        <mat-form-field appearance="fill" class="form-field" *ngIf="!admin_service.selectedProduct">
+            <mat-label>category</mat-label>
+            <mat-select formControlName="category">
+                <mat-option *ngFor="let category of admin_service.categories" [value]="category._id">{{
+                    category.name }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <!--  -->
+
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>image url</mat-label>
+            <input matInput placeholder="image url" formControlName="img_url">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="number">
+            <mat-label>price</mat-label>
+            <input matInput type="number" placeholder="ex. 300" formControlName="price">
+        </mat-form-field>
+
+        <button mat-raised-button class="lower_btn_add form-field" color="primary">
+            {{ handleLowerBtnTxt()}}</button>
+        <a *ngIf="r.url=='/addProduct'" routerLink="">Go back</a>
+        <p class="msg">{{msg}}</p>
+    </form>
+
+
+</div>

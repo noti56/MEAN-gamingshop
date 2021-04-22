@@ -1,0 +1,35 @@
+<!-- Logged in -->
+
+<div class="main" *ngIf="auth_service.user.isAdmin == undefined && auth_service.hasClickedOnStart">
+    <!-- user  -->
+
+
+    <section [ngClass]="{'left':cart_service.displayCart,'leftSmall':!cart_service.displayCart}">
+
+        <app-cart a="order" link="order"></app-cart>
+    </section>
+
+
+
+    <section [ngClass]="{'rightSmall':cart_service.displayCart,'right':!cart_service.displayCart}">
+
+        <app-shop></app-shop>
+
+    </section>
+</div>
+
+<div class="main" *ngIf="auth_service.user.isAdmin && auth_service.hasClickedOnStart">
+    <!-- Admin -->
+    <section class="left">
+        <!-- <router-outlet></router-outlet> -->
+
+        <app-product-add></app-product-add>
+    </section>
+
+    <section class="right">
+
+        <app-shop></app-shop>
+
+    </section>
+
+</div>

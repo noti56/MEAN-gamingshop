@@ -1,0 +1,32 @@
+<div class="shop">
+    <div class="insideNav">
+
+
+        <mat-tab-group (selectedTabChange)="navCatHandle($event)">
+            <mat-tab *ngFor="let category of shop_service.categories" (click)="navCatHandle(category.name)"
+                [label]="category.name">
+
+                <div class="cards_container" *ngIf="shop_service.manyCards">
+
+                    <app-card *ngFor="let p of shop_service.products" [product]="p" [img_url]="p.img_url" [alt]="p.name"
+                        [name]="p.name" [price]="p.price">
+                    </app-card>
+
+                </div>
+                <div class="single_card_container" *ngIf="!shop_service.manyCards">
+                    <app-card [product]="shop_service.selectedProduct" [img_url]="shop_service.selectedProduct.img_url"
+                        [alt]="shop_service.selectedProduct.name" [name]="shop_service.selectedProduct.name"
+                        [price]="shop_service.selectedProduct.price">
+                    </app-card>
+
+                </div>
+            </mat-tab>
+
+        </mat-tab-group>
+
+
+
+    </div>
+
+
+</div>

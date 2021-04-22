@@ -1,0 +1,35 @@
+.login{
+    height: 100%;
+    width: 100%;
+    /* display: flex; */
+    
+    
+}
+mat-form-field{
+    
+    display: block;
+    
+}
+form{
+    /* margin: auto; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.shooping_link{
+    /* background-color: #fff; */
+    height: 80px;
+    
+    width: max-content;
+    display: flex;
+    margin: auto;
+    /* margin-top: 70px; */
+}
+
+.shooping_link button{
+     /* margin: auto;  */
+    /* text-align: center; */
+    /* border: 1px solid steelblue; */
+
+}

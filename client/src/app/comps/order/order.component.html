@@ -1,0 +1,66 @@
+<div class="comp">
+    <div class="cart" *ngIf="!displayModalBool">
+        <app-cart a="go to shop" link="" displayFinalPrice=true></app-cart>
+    </div>
+    <div class="flexMe" *ngIf="displayModalBool">
+
+        <div class="popup" *ngIf="displayModalBool">
+            <h3>your payment has succeed!</h3>
+            <h4>to download your reciept press here<button mat-button (click)="sendReciept()">
+                    <mat-icon>save</mat-icon>
+                </button> </h4>
+            <a routerLink="" mat-raised-button>
+                Keep searching great products!
+            </a>
+
+        </div>
+    </div>
+    <div class="order" *ngIf="!displayModalBool">
+        <h2>Order</h2>
+
+
+
+        <mat-divider></mat-divider>
+        <form class="example-form" [formGroup]="myForm" (ngSubmit)="handleSubmit()">
+            <h3>Shipping Details</h3>
+            <mat-divider></mat-divider>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>City</mat-label>
+                <input (dblclick)="fillInput('city')" matInput placeholder="" [value]="cityDB" formControlName="city">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Street</mat-label>
+                <input (dblclick)="fillInput('street')" matInput placeholder="" [value]="streetDB"
+                    formControlName="street">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Shipping Date</mat-label>
+                <input (change)="handleDate()" type="date" matInput placeholder="" formControlName="shippingDate">
+            </mat-form-field>
+            <div *ngIf="displayMsg" style="text-align: center;color:red;">
+                <p> the date: {{errorDate }} is already taken by too many shipments.</p>
+                <p>please choose another date</p>
+            </div>
+            <!-- divider -->
+            <h3>Payments <mat-icon>payment</mat-icon>
+            </h3>
+            <mat-divider></mat-divider>
+            <!-- 4539220806674178 -->
+
+            <mat-form-field class="example-full-width ">
+                <mat-label>credit Card</mat-label>
+                <input matInput placeholder=" VISA cards only (^4580-16 notes)" formControlName="creditCard">
+            </mat-form-field>
+
+            <button class="formBTN" *ngIf="!myForm.controls.creditCard.errors" mat-raised-button
+                color="primary">Order</button>
+            <button class="formBTN" *ngIf="myForm.controls.creditCard.errors" disabled mat-raised-button
+                color="primary">Order</button>
+
+
+        </form>
+
+    </div>
+
+</div>

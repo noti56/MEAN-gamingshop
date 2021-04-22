@@ -1,0 +1,13 @@
+<!-- <form class="example-form" [formGroup]="myForm"> -->
+<form class="example-form" (ngsubmit)="handleSubmit($event)">
+    <mat-form-field class="example-full-width">
+        <mat-label>Product name</mat-label>
+        <!-- <input matInput placeholder="Ex. Steelseries" formControlName="name"> -->
+        <input (keyup)="order($event)" matInput placeholder="Ex. Steelseries">
+
+    </mat-form-field>
+
+    <!-- <button mat-button>
+        <mat-icon>search</mat-icon>
+    </button> -->
+</form>
