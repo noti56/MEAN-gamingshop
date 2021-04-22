@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 const connectToDb = async () => {
 
-    //69J2MKS9jqtL6uJ Password to db
+    
     try {
 
-        await mongoose.connect('mongodb+srv://noti56:69J2MKS9jqtL6uJ@gamingshop.prznl.mongodb.net/gamingShop?retryWrites=true&w=majority', {
+        await mongoose.connect('this link is private sorry ! ', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false,
